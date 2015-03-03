@@ -1,0 +1,20 @@
+{ "index" : { "_id" : "0" } }
+{ "source": "example.org", "message": "Hi", "timestamp": "2015-01-01 00:01:00.004" }
+{ "index" : { "_id" : "1" } }
+{ "source": "example.org", "message": "Ho", "timestamp": "2015-01-01 00:02:01.001", "n": 1 }
+{ "index" : { "_id" : "2" } }
+{ "source": "example.org", "message": "Hi", "timestamp": "2015-01-01 00:03:02.002", "n": 1 }
+{ "index" : { "_id" : "3" } }
+{ "source": "example.org", "message": "Ho", "timestamp": "2015-01-01 00:04:03.003", "n": 2 }
+{ "index" : { "_id" : "4" } }
+{ "source": "example.org", "message": "Hi", "timestamp": "2015-01-01 00:05:04.004", "n": 2 }
+{ "index" : { "_id" : "5" } }
+{ "source": "example.com", "message": "Ho", "timestamp": "2015-01-01 00:01:05.004" }
+{ "index" : { "_id" : "6" } }
+{ "source": "example.com", "message": "Hi", "timestamp": "2015-01-01 00:02:06.001", "n": 3 }
+{ "index" : { "_id" : "7" } }
+{ "source": "example.com", "message": "Ho", "timestamp": "2015-01-01 00:03:07.002", "n": 3 }
+{ "index" : { "_id" : "8" } }
+{ "source": "example.com", "message": "Hi", "timestamp": "2015-01-01 00:04:08.003", "n": 3 }
+{ "index" : { "_id" : "9" } }
+{ "source": "example.com", "message": "Ho", "timestamp": "2015-01-01 00:05:09.004", "n": 4 }
