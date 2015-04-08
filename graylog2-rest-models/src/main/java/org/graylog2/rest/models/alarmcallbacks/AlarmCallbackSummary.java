@@ -50,5 +50,3 @@ public abstract class AlarmCallbackSummary {
         return new AutoValue_AlarmCallbackSummary(id, streamId, type, configuration, createdAt, creatorUserId);
     }
 }
-
-/* test */
