@@ -34,8 +34,12 @@ import java.util.UUID;
 public abstract class AbstractAlertCondition implements EmbeddedPersistable, AlertCondition {
 
     public enum Type {
-        MESSAGE_COUNT,
-        FIELD_VALUE,
+        MESSAGE_COUNT
+        ,
+        FIELD_VALUE
+        ,
+        FIELD_CONTENTS
+        ,
         DUMMY
     }
 

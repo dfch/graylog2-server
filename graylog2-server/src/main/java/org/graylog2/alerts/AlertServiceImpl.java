@@ -147,6 +147,9 @@ public class AlertServiceImpl extends PersistedServiceImpl implements AlertServi
                 return messageCountAlertFactory.createAlertCondition(stream, id, createdAt, creatorId, parameters);
             case FIELD_VALUE:
                 return fieldValueAlertFactory.createAlertCondition(stream, id, createdAt, creatorId, parameters);
+            // TODO DFCH add real FIELD_CONTENTS factory
+            case FIELD_CONTENTS:
+                return fieldValueAlertFactory.createAlertCondition(stream, id, createdAt, creatorId, parameters);
         }
 
         throw new AbstractAlertCondition.NoSuchAlertConditionTypeException("Unhandled alert condition type: " + type);

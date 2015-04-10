@@ -36,8 +36,11 @@ public class AlertCondition {
     }
 
     public enum Type {
-        MESSAGE_COUNT,
+        MESSAGE_COUNT
+        ,
         FIELD_VALUE
+        ,
+        FIELD_CONTENTS
     }
 
     private final String id;
@@ -87,6 +90,8 @@ public class AlertCondition {
                 return "Message count condition";
             case FIELD_VALUE:
                 return "Field value condition";
+            case FIELD_CONTENTS:
+                return "Field contents condition static";
         }
 
         throw new RuntimeException("Cannot build summary for unknown alert condition type [" + type + "]");
@@ -106,6 +111,8 @@ public class AlertCondition {
             case FIELD_VALUE:
                 sb.append(buildFieldValueDescription());
                 break;
+            case FIELD_CONTENTS:
+                sb.append(buildFieldContentsDescription());
             default:
                 throw new RuntimeException("Cannot build description for unknown alert condition type [" + type + "]");
         }
@@ -200,6 +207,39 @@ public class AlertCondition {
 
         sb.append(" than ").append(thresholdFormatted)
             .append(" in the last ");
+
+        if (time == 1) {
+            sb.append("minute. ");
+        } else {
+            sb.append(time).append(" minutes. ");
+        }
+
+        return sb.toString();
+    }
+
+    // TODO DFCH adjust to real FIELD_CONTENTS
+    private String buildFieldContentsDescription() {
+        StringBuilder sb = new StringBuilder();
+        double match = ((Number) parameters.get("match")).doubleValue();
+        String matchFormatted = new DecimalFormat("#.###").format(match);
+        int time = (int) ((Number) parameters.get("time")).longValue();
+
+        sb.append("Alert is triggered when the field ")
+                .append(parameters.get("field")).append(" has a ")
+                .append(parameters.get("match_type"))
+                .append(" ");
+
+        if (parameters.get("type").equals("compare") || parameters.get("type").equals("compare_ignore_case")
+                || parameters.get("type").equals("match")) {
+            sb.append(parameters.get("type")).append(" value");
+        } else if(parameters.get("type").equals("stddev")) {
+            sb.append("standard deviation");
+        } else {
+            sb.append(parameters.get("type"));
+        }
+
+        sb.append(" than ").append(matchFormatted)
+                .append(" in the last ");
 
         if (time == 1) {
             sb.append("minute. ");
