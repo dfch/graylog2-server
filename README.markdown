@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/Graylog2/graylog2-server.svg?branch=master)](https://travis-ci.org/Graylog2/graylog2-server)
 
+[![Build Status feature/alert-condition](https://travis-ci.org/dfch/graylog2-server.svg?branch=feature/alert-condition)](https://travis-ci.org/dfch/graylog2-server.svg)
+
 This is Graylog, an open source log management solution.
 
 Please follow the release announcements and documentation links on https://www.graylog.org/ for details.
